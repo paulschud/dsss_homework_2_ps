@@ -33,12 +33,16 @@ def math_quiz():
         Operation = random_operation()   #get random operation: +, - or *
 
         Problem, Answer = calculation(OperandOne, OperandTwo, Operation) #calculate the math problem
-        print(f"\nQuestion: {Problem}")                                #output question for user
-        UserAnswer = int(input("Your answer: "))                       #retrieve input from user and convert to integer
+        print(f"\nQuestion: {Problem}")   #output question for user   
+        try:                          
+         UserAnswer = int(input("Your answer: "))#retrieve input from user and convert to integer
+        except ValueError:
+         print("Please input numeric values only!")
+         continue #skip rest of the loop
 
-        if UserAnswer == Answer:                                       #compare if user_answer is correct
+        if UserAnswer == Answer:#compare if user_answer is correct
             print("Correct! You earned a point.")                      
-            UserScore += 1                                            #increment score by 1
+            UserScore += 1 #increment score by 1
         else:
             print(f"Wrong answer. The correct answer is {Answer}.")
 
