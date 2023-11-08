@@ -1,3 +1,3 @@
 import setuptools
-if __name__ == "main"
+if __name__ == "main":
 	setuptools.setup()
