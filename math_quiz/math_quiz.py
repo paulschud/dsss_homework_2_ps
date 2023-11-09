@@ -3,17 +3,47 @@ import random
 
 def random_number(min, max):
     """
-    Random integer.
+    Generate random integer number in an interval of two integer numbers.
+    
+    Args:
+        min (integer): lower bound of the interval
+        max (intger): upper bound of interval
+        
+    Returns:
+        intger: random number in the given interval
     """
     return random.randint(min, max) 
 
 
 def random_operation():
+    """
+    Generate random operation: +, - or *
+    
+    Args:
+        -
+        
+    Returns:
+        string: math operation
+    """
     return random.choice(['+', '-', '*'])
 
 
 def calculation(OperandOne, OperandTwo, Operation):
+    """
+    Executes given math operation.
+    
+    Args:
+        OperandOne (integer): First operand of execution
+        OperandTwo (intger): Second operand of execution
+        Operation (string): Type of peration (+, - *)
+        
+    Returns:
+        Problem (string): The mathematical problem
+        Answer (integer): The solution of the problem
+    """
+    
     Problem = f"{OperandOne} {Operation} {OperandTwo}"        #constructs the problem
+    
     if Operation == '+': Answer = OperandOne + OperandTwo     #calcualtes sum
     elif Operation == '-': Answer = OperandOne - OperandTwo   #calculates difference
     else: Answer = OperandOne * OperandTwo                    #calculates product
@@ -21,6 +51,17 @@ def calculation(OperandOne, OperandTwo, Operation):
     return Problem, Answer 
 
 def math_quiz():
+    """
+    Math quiz, that lets you calculate +, - or * operations. It compares your 
+    solution against the correct answer and gives you points for each correct 
+    answer
+    
+    Args:
+        -
+        
+    Returns:
+        -
+    """
     UserScore = 0 #initialize score
 
 
